@@ -7,7 +7,7 @@ class Window
 {
 public:
 	HRESULT Create(int width, int height, const wchar_t* title);
-	void Show();
+	void Show(int nCmdShow);
 	HWND GetHandle() const;
 
 private:

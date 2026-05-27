@@ -35,7 +35,8 @@ HRESULT Window::Create(int width, int height, const wchar_t* title)
 			return HRESULT_FROM_WIN32(dwError);
 	}
 	
-	m_hwnd = CreateWindow(
+	m_hwnd = CreateWindowEx(
+		0,
 		m_windowClassName.c_str(),
 		title,
 		WS_OVERLAPPEDWINDOW,
@@ -55,9 +56,9 @@ HRESULT Window::Create(int width, int height, const wchar_t* title)
 	return S_OK;
 }
 
-void Window::Show()
+void Window::Show(int nCmdShow)
 {
-	ShowWindow(m_hwnd, SW_SHOW);
+	ShowWindow(m_hwnd, nCmdShow);
 	UpdateWindow(m_hwnd);
 }
 

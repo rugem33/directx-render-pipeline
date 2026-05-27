@@ -1,13 +1,16 @@
 #include "Core/Window.h"
 
-int main()
+int WINAPI WinMain(HINSTANCE hInstance,
+    HINSTANCE,
+    LPSTR,
+    int nCmdShow)
 {
     Window window;
 
     if (FAILED(window.Create(1280, 720, L"DirectX Rendering Pipeline")))
         return -1;
 
-    window.Show();
+    window.Show(nCmdShow);
 
     MSG msg{};
 
@@ -23,5 +26,5 @@ int main()
         // 나중에 여기서 Renderer.Render();
     }
 
-    return 0;
+    return static_cast<int>(msg.wParam);
 }

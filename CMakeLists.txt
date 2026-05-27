@@ -14,6 +14,10 @@ add_executable(DirectXRenderingPipeline
     src/Core/Window.cpp
 )
 
+set_target_properties(DirectXRenderingPipeline PROPERTIES
+    WIN32_EXECUTABLE TRUE
+)
+
 target_include_directories(DirectXRenderingPipeline PRIVATE
     src
 )
